@@ -1,17 +1,17 @@
-# TODO решите задачу
-import json
+#TODO решите задачу
+import json  # Импорт модуля для работы с данными в формате JSON
 
 
-def task() -> float:
-    with open("input.json", 'r') as file:
-        data = json.load(file)
+def task() -> float:  # Объявление функции, которая возвращает значение типа float
+    with open("input.json", 'r') as file:  # Открытие файла для чтения и сохранение файла в переменную
+        data = json.load(file)  # Загрузка данных из JSON файла в переменную
 
     total = 0
-    for item in data:
-        product = item["score"] * item["weight"]
-        total += product
+    for item in data:   # Перебор каждого элемента
+        product = item["score"] * item["weight"]    # Вычисление произведения для текущего элемента
+        total += product   # Добавление текущего произведения к общей сумме
 
-    return round(total, 3)
+    return round(total, 3) # Возвращение полученной суммы, округленной до 3 знаков после запятой. Подобное действие позволяет использовать возвращенное значение в других частях программы
 
 
-print(task())
+print(task())  # Вывод результата выполнения функции task
